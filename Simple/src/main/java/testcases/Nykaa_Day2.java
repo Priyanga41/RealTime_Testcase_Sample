@@ -88,22 +88,21 @@ public class Nykaa_Day2 {
 				
 	//11. Click on ADD to BAG
 		driver.findElementByXPath("//div[@class='pull-left']//button").click();
+				
+	//12. Go to Shopping Bag 
+		Thread.sleep(3000);
 		driver.findElementByXPath("//div[@class='AddBagIcon']").click();
 		System.out.println("Added to cart");
 		
-	//12. Go to Shopping Bag 
-		Thread.sleep(3000);
-		driver.findElementByXPath("//div[@class='second-col']//button").click();
-		
 	//13. Print the Grand Total amount
-		wait.until(ExpectedConditions.visibilityOf(driver.findElementByXPath("(//div[@class='value'])[2]")));
-		String Total = driver.findElementByXPath("(//div[@class='value'])[2]").getText();
+		Thread.sleep(3000);
+		String Total = driver.findElementByXPath("//div[@class='value medium-strong']").getText();
 		String text1 = Total.replaceAll("\\D", "");
 		int total = Integer.parseInt(text1);
 		System.out.println("Grand Total :"+total);
 		
 	//14. Click Proceed
-		driver.findElementByXPath("(//button[contains(@class,'btn full')])[2]").click();
+		driver.findElementByXPath("//span[text()='Proceed']").click();
 		
 	//15. Continue as guest
 		driver.findElementByXPath("(//button[@type='button'])[2]").click();
